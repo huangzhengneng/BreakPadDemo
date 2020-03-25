@@ -33,6 +33,10 @@ Dump 日志分析
 ```
 	 ./tools/mac/minidump_stackwalk crashDump/***.dmp >crashLog.txt 
 ```
+    windows下使用\sdk\lldb\3.1\bin\minidump_stackwalk.exe
+```
+    G:\android\android-studio\sdk\lldb\3.1\bin\minidump_stackwalk.exe b9e6bcda-2e55-4ce7-1374bdb7-d7c1e4a8.dmp >crash.txt
+```
 	 
 3. 打开文件后可以看到一个详细的 crash 日志，如下
 
@@ -109,6 +113,13 @@ arm-linux-androideabi-addr2line -f -C -e sample/build/intermediates/transforms/m
 //输出结果如下
 Crash()
 
+```
+在windows下：
+```
+G:\android\android-studio\sdk\ndk\16.1.4479499\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\bin\aarch64-linux-android-addr2line.exe -f -C -e G:\android\advan
+ce-projs\Chapter01\sample\build\intermediates\transforms\mergeJniLibs\debug\0\lib\arm64-v8a\libcrash-lib.so 0x5e0
+//输出结果如下
+Crash()
 ```
 补充内容
 =======
